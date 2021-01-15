@@ -1,35 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Profile card component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Victor Crest
-  26
-  London
+    <title>Frontend Mentor | Profile card component</title>
 
-  80K
-  Followers
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
-  803K
-  Likes
+      :root {
+        --dark-cyan: hsl(185, 75%, 39%);
+        --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+        --dark-grayish-blue: hsl(227, 10%, 46%);
+        --dark-gray: hsl(0, 0%, 59%);
+        --ff: "Kumbh Sans", sans-serif;
+        --fs: 18px;
+      }
 
-  1.4K
-  Photos
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: var(--ff);
+        font-size: var(--fs);
+      }
+
+      p {
+        font-size: 14px;
+        color: var(--dark-grayish-blue);
+        padding-top: 5px;
+      }
+
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 40px);
+        background-color: var(--dark-cyan);
+        overflow: hidden;
+      }
+
+      .bg-top {
+        z-index: 1;
+        position: absolute;
+        bottom: 35%;
+        right: 50%;
+      }
+
+      .bg-bottom {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 48%;
+      }
+
+      .card {
+        z-index: 2;
+        width: 320px;
+        height: 360px;
+        border-radius: 20px;
+        background-color: #fff;
+      }
+
+      .card_header {
+        position: relative;
+        height: 120px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+
+      .card_header img {
+        width: 320px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+
+      .avatar {
+        position: relative;
+        top: -40px;
+        margin: auto;
+        padding: 5px;
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        border-radius: 100px;
+      }
+
+      .avatar img {
+        width: 100%;
+        border-radius: 100px;
+      }
+
+      .card_body {
+        margin-top: -50px;
+        padding-top: 2rem;
+        padding-bottom: 1.2rem;
+        text-align: center;
+      }
+
+      .card_body span {
+        padding: 5px;
+        font-weight: 400;
+        color: var(--dark-grayish-blue);
+      }
+
+      .card_body p {
+        padding-top: 10px;
+      }
+
+      .card_footer {
+        display: flex;
+        padding: 1.5rem;
+        text-align: center;
+        border-top: 1px solid var(--dark-gray);
+      }
+
+      .followers,
+      .likes,
+      .photos {
+        flex-basis: 33.33%;
+      }
+
+      .attribution {
+        padding: 10px;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/bg-pattern-top.svg" alt="" class="bg-top" />
+      <img src="images/bg-pattern-bottom.svg" alt="" class="bg-bottom" />
+      <div class="card">
+        <div class="card_header">
+          <figure>
+            <img src="images/bg-pattern-card.svg" alt="Cover image" />
+          </figure>
+        </div>
+        <figure class="avatar">
+          <img src="images/image-victor.jpg" alt="Profile picture" />
+        </figure>
+        <div class="card_body">
+          <h1>Victor Crest <span>26</span></h1>
+          <p>London</p>
+        </div>
+        <div class="card_footer">
+          <div class="followers">
+            <h2>80K</h2>
+            <p>Followers</p>
+          </div>
+          <div class="likes">
+            <h2>803K</h2>
+            <p>Likes</p>
+          </div>
+          <div class="photos">
+            <h2>1.4K</h2>
+            <p>Photos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        href="https://www.frontendmentor.io/profile/tuhindas-td"
+        target="_blank"
+        >Tuhin Das</a
+      >.
+    </div>
+  </body>
 </html>
