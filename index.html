@@ -25,6 +25,9 @@
         --dark-gray: hsl(0, 0%, 59%);
         --ff: "Kumbh Sans", sans-serif;
         --fs: 18px;
+        --ls: 1.5px;
+        --br-card: 20px;
+        --br-avatar: 100px;
       }
 
       * {
@@ -74,21 +77,21 @@
         z-index: 2;
         width: 320px;
         height: 360px;
-        border-radius: 20px;
+        border-radius: var(--br-card);
         background-color: #fff;
       }
 
       .card_header {
         position: relative;
         height: 120px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border-top-left-radius: var(--br-card);
+        border-top-right-radius: var(--br-card);
       }
 
       .card_header img {
         width: 320px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border-top-left-radius: var(--br-card);
+        border-top-right-radius: var(--br-card);
       }
 
       .avatar {
@@ -99,12 +102,12 @@
         width: 100px;
         height: 100px;
         background-color: #fff;
-        border-radius: 100px;
+        border-radius: var(--br-avatar);
       }
 
       .avatar img {
         width: 100%;
-        border-radius: 100px;
+        border-radius: var(--br-avatar);
       }
 
       .card_body {
@@ -137,6 +140,11 @@
       .photos {
         color: var(--very-dark-desaturated-blue);
         flex-basis: 33.33%;
+      }
+
+      .card_footer p {
+        font-size: 10px;
+        letter-spacing: var(--ls);
       }
 
       .attribution {
